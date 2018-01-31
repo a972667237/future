@@ -1,0 +1,42 @@
+{% extends 'index/base.html' %}
+
+{% block main_left %}
+          <div class="letter main_card">
+            <div class="card_title">
+              <span>致客户的一封信</span>
+            </div>
+            <div class="card_content">
+              <p class="start">尊敬的客户：</p>
+              <p class="paragraph">您好！</p>
+              <p class="paragraph">欢迎您的来访！</p>
+              <br>
+              <p class="end">期货の屋</p>
+            </div>
+          </div>
+          <div class="information main_card">
+            <div class="card_title">
+              <span>研究资讯</span>
+            </div>
+            <div class="card_content">
+                {% for i in info %}
+              <div class="info_item">
+                <p>{{ i.create_date| date:"Y/m/d            D"}}</p>
+                <a href="/article?id={{ i.id }}">{{ i.title }}</a>
+              </div>
+                {% endfor %}
+            </div>
+          </div>
+          <div class="financial main_card">
+            <div class="card_title">
+              <span>金融知识</span>
+            </div>
+            <div class="card_content">
+                {% for i in fi %}
+              <div class="info_item">
+                <p>{{ i.create_date| date:"Y/m/d            D"}}</p>
+                <a href="/article?id={{ i.id }}">{{ i.title }}</a>
+              </div>
+                {% endfor %}
+            </div>
+          </div>
+{% endblock %}

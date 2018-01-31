@@ -1,0 +1,26 @@
+{% extends 'index/base.html' %}
+{% block title %}
+    业务介绍 -- 期货の屋
+{% endblock %}
+
+{% block main_left %}
+    <div class="info_list list">
+        <div class="list_title">
+            <span>业务信息</span>
+        </div>
+        <div class="main_out futures_account">
+            {% autoescape off %}
+            <p>{{ future_account.content }}</p>
+            {% endautoescape %}
+        </div>
+        <div class="main_out option_account">
+            {% autoescape off %}
+            <p>{{ option_account.content }}</p>
+            {% endautoescape %}        </div>
+        <div class="main_out intermediary_recruitment">
+            {% autoescape off %}
+            <p>{{ intermediary_recruitment.content }}</p>
+            {% endautoescape %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'index/base.html' %}
+
+{% block title %}
+    {% if article_type == '1' %}
+           实时资讯 -- 期货の屋
+    {% else %}
+           金融知识 -- 期货の屋
+    {% endif %}
+
+{% endblock %}
+
+{% block main_left %}
+    <div class="article_list list">
+        <div class="list_title">
+            {% if article_type == '1' %}
+            <span>实时资讯</span>
+            {% else %}
+            <span>金融知识</span>
+            {% endif %}
+        </div>
+{#        using for to extend card   #}
+        {% for i in article %}
+        <div class="article_card">
+            <p>{{ i.create_date| date:"Y/m/d            D"}}</p>
+            <p>{{ i.title }}</p>
+            <a href="/article?id={{ i.id }}"><div class="read_more"><span>read more</span></div></a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="page_place">
+        <ul class="pagination">
+            {% for p in page_list %}
+                <li><a href="/list?type={{ article_type }}&&page={{ p }}">{{ p }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

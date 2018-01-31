@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/master.css">
+    <title>{% block title %}期货の屋{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- place to fix the banner or wraper -->
+      <header>
+        <div class="header_left">
+            <a href="/"><span class="site_name">期货の屋</span></a>
+        </div>
+        <div class="header_right">
+          <ul>
+            <li>
+              <a href="/about">
+                <span>关于我们</span>
+              </a>
+            </li>
+            <li>
+              <a href="/join">
+                <span>加入我们</span>
+              </a>
+            </li>
+            <li>
+              <a href="/introduce">
+                <span>业务介绍</span>
+              </a>
+            </li>
+            <li>
+              <a href="/list?type=1">
+                <span>实时资讯</span>
+              </a>
+            </li>
+            <li>
+              <a href="/list?type=2">
+                <span>金融知识</span>
+              </a>
+            </li>
+            <li>
+              <a href="/fee">
+                <span>费率一览</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <!-- place to show what you want to show -->
+      <main>
+        <div class="main_left">
+          <!-- fix highlights -->
+        {% block highlights %}
+            <div class="highlights main_out">
+            <ul>
+                {% for article in hl %}
+              <li>
+                <a href="/article?id={{ article.id }}">
+                  <span>{{ article.title }}</span>
+                </a>
+              </li>
+                {% endfor %}
+            </ul>
+          </div>
+        {% endblock %}
+            {% block main_left %}
+            {% endblock %}
+        </div>
+        <div class="main_right">
+            {% block right %}
+          <div class="tojoin">
+            <a href="#">期货开户</a>
+            <a href="#">期权开户</a>
+            <a href="#">居间招募</a>
+            <a href="#">外盘开户</a>
+          </div>
+          <div class="search">
+            <input type="text" name="" value="">
+            <a href="#"><div class="search_icon"></div></a>
+          </div>
+          <div class="contact">
+            <p><span class="title">【联系方式】</span></p>
+            <p><span class="contact_key">【联系人】</span> <span class="contact_value">{{ contact_info.name }}</span></p>
+            <p><span class="contact_key">【电话】</span> <span class="contact_value">{{ contact_info.photo }}</span></p>
+            <p><span class="contact_key">【QQ】</span> <span class="contact_value">{{ contact_info.qq }}</span></p>
+            <p><span class="contact_key">【邮箱】</span> <span class="contact_value">{{ contact_info.mail }}</span></p>
+          </div>
+            {% endblock %}
+        </div>
+        <div class="friend_link">
+          <p><span>友情链接：</span> <a href="#">迈科期货</a> <a href="#">上海期货交易所</a> <a href="#">大连期货交易所</a> <a href="#">郑州期货交易所</a> </p>
+        </div>
+      </main>
+      <footer>
+        <p class="copyright">Copyright © 2018.XXX All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+  <script src="/static/js/master.js" charset="utf-8"></script>
+</html>

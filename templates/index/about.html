@@ -1,0 +1,13 @@
+{% extends 'index/base.html' %}
+
+{% block title %}
+    关于我们 -- 期货の屋
+{% endblock %}
+
+{% block main_left %}
+    <div class="about main_out">
+        {% autoescape off %}
+            {{ ab.content }}
+        {% endautoescape %}
+    </div>
+{% endblock %}
