@@ -20,7 +20,8 @@ a{
 /* start other */
 
 .container{
-  width: 925px;
+  max-width: 925px;
+  width: 80%;
   padding-top: 3%;
   margin: 0 auto;
 }
@@ -47,7 +48,7 @@ header .header_left .site_name{
 header .header_right ul li{
   font-size: 18px;
   display: inline-block;
-  margin-right: 48px;
+  margin-right: 5%;
 }
 main{
   width: 100%;
