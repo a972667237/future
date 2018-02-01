@@ -1,6 +1,7 @@
 #coding: utf-8
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, InvalidPage
+from django.views.generic import View
 from django.http import HttpResponse
 
 from .models import *
@@ -50,6 +51,7 @@ def introduce(requests):
 
 def article(requests):
     art_id = requests.GET.get('id')
+    contact_info = ContactInfo.objects.get(id=1)
     article = get_object_or_404(Article, pk=art_id, isPublic=True)
     return render(requests, 'index/article.html', locals())
 
@@ -58,3 +60,16 @@ def fee(requests):
     contact_info = ContactInfo.objects.get(id=1)
     intro = Fee_content.objects.all()
     return render(requests, 'index/fee.html', locals())
+
+class Join(View):
+    def get(self, requests):
+        hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2)).order_by('-pk')[0:5]
+        contact_info = ContactInfo.objects.get(id=1)
+        return render(requests, 'index/join.html', locals())
+
+    def post(self, requests):
+        name = requests.POST.get('name')
+        phone = requests.POST.get('phone')
+        aim = requests.POST.get('aim')
+        others = requests.POST.get('others')
+        return HttpResponse("Success")

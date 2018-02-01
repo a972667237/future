@@ -152,10 +152,15 @@ main .main_left .list .main_out, main .main_left .list .article_card{
   margin-bottom: 44px;
 }
 
-main .main_left .list .main_out, main .main_left .list .article_content{
+main .main_left .list .main_out, main .main_left .list .form_content{
   border-left: 12px solid #1ebceb;
   padding-left: 5%;
+  line-height: 24px;
   font-size: 16px;
+}
+
+main .main_left .list .main_out, main .main_left .list .form_content .form_item{
+  margin-top: 12px;
 }
 
 main .main_left .list .futures_account::before{
@@ -278,4 +283,45 @@ footer{
 
 footer p{
   text-align: center;
+}
+
+.form_item input[type="text"]:focus{
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #0e4ca1;
+}
+
+.form_item input[type="text"]{
+  border: none;
+  border-bottom: 1px solid #1ebceb;
+}
+
+.form_item input[type="radio"]{
+  margin-right: 2%;
+}
+
+.form_item button{
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #1ebceb;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  border-color: #4cae4c;
+  box-shadow: none;
+}
+
+.form_item button:focus{
+  outline: none;
+  background-color: #0e4ca1;
+}
+
+#other{
+  display: none;
+}
+
+#aim_3:checked + label + #aim_4 + label + #other{
+  display: block;
 }
