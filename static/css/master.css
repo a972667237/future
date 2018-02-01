@@ -46,9 +46,9 @@ header .header_left .site_name{
   font-family: "normal-black";
 }
 header .header_right ul li{
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
-  margin-right: 5%;
+  margin-right: 6%;
 }
 main{
   width: 100%;
@@ -69,7 +69,7 @@ main .main_right{
 main .main_left .main_out{
   position: relative;
   border-left: 12px solid #0e4ca1;
-  font-size: 18px;
+  font-size: 14px;
   padding-left: 20px;
 }
 
@@ -110,21 +110,21 @@ main .main_left .main_card{
 
 main .main_left .main_card .card_title{
   font-family: "normal-black";
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 main .main_left .main_card .card_content{
   margin-top: 52px;
   padding-left: 5%;
-  font-size: 16px;
+  font-size: 14px;
   border-left: 8px solid #1ebceb;
 }
 
 main .main_left .main_card .card_content .info_item{
   margin-bottom: 10px;
-  line-height: 50px;
-  font-size: 28px;
+  line-height: 40px;
+  font-size: 22px;
 }
 
 main .main_left .page_place{
@@ -138,7 +138,7 @@ main .main_left .page_place .pagination li{
 
 main .main_left .list{
   margin-top: 52px;
-  font-size: 28px;
+  font-size: 20px;
 }
 
 main .main_left .list .list_title{
@@ -155,7 +155,7 @@ main .main_left .list .main_out, main .main_left .list .article_card{
 main .main_left .list .main_out, main .main_left .list .article_content{
   border-left: 12px solid #1ebceb;
   padding-left: 5%;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 main .main_left .list .futures_account::before{
@@ -171,7 +171,7 @@ main .main_left .list .option_account::before{
 }
 
 main .main_left .article_list p{
-  line-height:50px;
+  line-height:40px;
 }
 
 main .main_left .list .article_card a{
@@ -249,17 +249,17 @@ main .main_right .contact{
 }
 
 main .main_right .contact p{
-  line-height:32px;
+  line-height:28px;
 }
 
 main .main_right .contact p span{
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
 }
 
 main .main_right .contact p .title{
   font-family: "normal-black";
-  font-size: 24px;
+  font-size: 22px;
 }
 
 main .main_right .contact p .contact_key{
