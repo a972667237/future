@@ -53,6 +53,19 @@ def article(requests):
     art_id = requests.GET.get('id')
     contact_info = ContactInfo.objects.get(id=1)
     article = get_object_or_404(Article, pk=art_id, isPublic=True)
+    more_article = Article.objects.filter(isPublic=True,keyword__in=article.keyword.all()).exclude(id=article.id).order_by("-pk")
+    more_article_temp = []
+    for i in more_article:
+        canSave = True
+        for j in more_article_temp:
+            if i.id == j.id:
+                canSave = False
+                break
+        if canSave:
+            more_article_temp.append(i)
+            if len(more_article) == 5:
+                break
+    more_article = more_article_temp
     return render(requests, 'index/article.html', locals())
 
 def fee(requests):
@@ -72,4 +85,7 @@ class Join(View):
         phone = requests.POST.get('phone')
         aim = requests.POST.get('aim')
         others = requests.POST.get('others')
-        return HttpResponse("Success")
+        Join_form(name=name, phone=phone, aim=aim, others=others).save()
+        hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2)).order_by('-pk')[0:5]
+        contact_info = ContactInfo.objects.get(id=1)
+        return render(requests, 'index/join.html', locals())

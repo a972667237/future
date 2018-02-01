@@ -8,14 +8,34 @@
 {% block highlights %}
 {% endblock %}
 {% block main_left %}
-    <div class="list">
+    <div class="article_list list">
         <div class="list_title">
-            {{ article.title }}
+            {% if article_type == '1' %}
+            <span>实时资讯</span>
+            {% else %}
+            <span>金融知识</span>
+            {% endif %}
+        </div>
+{#        using for to extend card   #}
+        <div class="article_card">
+            <p>{{ article.title }}</p>
+            <p>{{ article.create_date| date:"Y/m/d            D"}}         {{ article.author }}</p>
         </div>
         <div class="article_content">
             {% autoescape off %}
-            {{ article.content }}
+                {{ article.content }}
             {% endautoescape %}
+            <br>
+            {% for i in article.keyword.all %}
+                <a href="/search?keyword={{ i.name }}">{{ i.name }}</a>
+            {% endfor %}
+            <div class="more_article">
+                {% for i in more_article %}
+                <div class="more_article_card">
+                    <span>{{ i.create_date| date:"Y/m/d            D" }}</span> <a href="/article?id={{ i.pk }}">{{ i.title }}</a>
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
