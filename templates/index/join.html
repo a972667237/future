@@ -1,0 +1,57 @@
+{% extends 'index/base.html' %}
+{% block title %}
+    加入我们 -- 期货の屋
+{% endblock %}
+{% block style %}
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I" crossorigin="anonymous">
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block main_left %}
+    <div class="info_list list">
+        <div class="list_title">
+            <span>业务信息</span>
+        </div>
+{#        <div class="main_out futures_account">#}
+{#            {% autoescape off %}#}
+{#            <p>{{ future_account.content }}</p>#}
+{#            {% endautoescape %}#}
+{#        </div>#}
+{#        <div class="main_out option_account">#}
+{#            {% autoescape off %}#}
+{#            <p>{{ option_account.content }}</p>#}
+{#            {% endautoescape %}        </div>#}
+{#        <div class="main_out intermediary_recruitment">#}
+{#            {% autoescape off %}#}
+{#            <p>{{ intermediary_recruitment.content }}</p>#}
+{#            {% endautoescape %}#}
+{#        </div>#}
+            <div class="form_content">
+                <p>
+                    如果您有意向加入我们的大家庭，可以留下您的联系方式，届时会有雇主跟您联系！
+                </p>
+                <form action="" method="post">
+                    <div class="form_item">
+                        <label for="name">怎么称呼您：</label> <br>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div class="form_item">
+                        <label for="aim">您有什么要求？</label><br>
+                        <input type="radio" name="aim" value="1" id="aim_1"><label for="aim_1">业务办理</label>
+                        <input type="radio" name="aim" value="2" id="aim_2"><label for="aim_2">活动报名</label>
+                        <input type="radio" name="aim" value="3" id="aim_3"><label for="aim_3">其他</label>
+                        <input type="radio" name="aim" value="4" id="aim_4"><label for="aim_4">路过，想了解一下</label>
+                        <textarea name="others" id="other" cols="50" rows="10"></textarea>
+                    </div>
+                    <div class="form_item">
+                        <label for="phone">您的联系方式？</label><br>
+                        <input type="text" name="phone" id="phone">
+                    </div>
+                    {% csrf_token %}
+                    <div class="form_item">
+                        <button type="submit">点击提交</button>
+                    </div>
+                </form>
+            </div>
+    </div>
+{% endblock %}
