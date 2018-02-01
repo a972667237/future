@@ -45,12 +45,16 @@ def list(requests):
 def introduce(requests):
     hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2)).order_by('-pk')[0:5]
     contact_info = ContactInfo.objects.get(id=1)
-    future_account = get_object_or_404(Article, title=u"期货开户")
-    option_account = get_object_or_404(Article, title=u'期权开户')
-    intermediary_recruitment = get_object_or_404(Article, title=u'居间招募')
+    intro = Introduce_content.objects.all()
     return render(requests, 'index/introduce.html', locals())
 
 def article(requests):
     art_id = requests.GET.get('id')
     article = get_object_or_404(Article, pk=art_id, isPublic=True)
     return render(requests, 'index/article.html', locals())
+
+def fee(requests):
+    hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2)).order_by('-pk')[0:5]
+    contact_info = ContactInfo.objects.get(id=1)
+    intro = Fee_content.objects.all()
+    return render(requests, 'index/fee.html', locals())

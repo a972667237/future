@@ -35,3 +35,22 @@ class ContactInfo(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Introduce_content(models.Model):
+    title = models.CharField(u"标题", max_length=100)
+    content = UEditorField(u'内容', max_length=100000)
+    class Meta:
+        verbose_name = '介绍页面'
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.title
+
+class Fee_content(models.Model):
+    title = models.CharField(u"标题", max_length=100)
+    content = UEditorField(u'内容', max_length=100000)
+    class Meta:
+        verbose_name = '收费页面'
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.title

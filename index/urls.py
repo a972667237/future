@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'list', list),
     url(r'introduce', introduce),
     url(r'article', article),
+    url(r'fee', fee),
 ]
