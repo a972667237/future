@@ -7,7 +7,7 @@ from DjangoUeditor.models import UEditorField
 ARTICLE_TYPE = (
     (0, u'页面内容'),
     (1, u'研究资讯'),
-    (2, u'金融知识')
+    (2, u'基础知识')
 )
 
 AIM_TYPE = (
@@ -28,6 +28,7 @@ class Key_word(models.Model):
 class Article(models.Model):
     title = models.CharField(u"标题", max_length=100)
     content = UEditorField(u'内容', max_length=100000)
+    summary = models.TextField(u"摘要", max_length=10000)
     create_date = models.DateField(u'创建时间', auto_now_add=True, editable=True)
     isPublic = models.BooleanField(u'是否发布', default=True)
     article_type = models.IntegerField(u'文章类型', choices=ARTICLE_TYPE, default=1)
@@ -73,6 +74,7 @@ class Join_form(models.Model):
     name = models.CharField(u"姓名", max_length=100)
     aim = models.IntegerField(u"目的", choices=AIM_TYPE)
     phone = models.CharField(u"电话", max_length=11)
+    place = models.CharField(u"地址", max_length=10000)
     others = models.CharField(u"其他", max_length=50000)
     isRead = models.BooleanField(u"是否已读", default=False)
     create_date = models.DateField(u"创建时间", auto_now_add=True, editable=False)

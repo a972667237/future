@@ -1,0 +1,70 @@
+{% extends 'index2/base.html' %}
+
+{% block beforeMain %}
+    <div class="bread">
+        <a href="/">主页</a>
+        > <a href="/list?type=1">研究资讯</a>
+    </div>
+    <div class="bm-title">
+        <span>研究资讯</span>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="list">
+        <div class="list_left">
+            <nav>
+                <ul>
+                    <li class="active"><a href="/search?keyword=">最新</a></li>
+                    <li><a href="/search?keyword=">股市</a></li>
+                    <li><a href="/search?keyword=">债市</a></li>
+                    <li><a href="/search?keyword=">商品</a></li>
+                    <li><a href="/search?keyword=">外汇</a></li>
+                    <li><a href="/search?keyword=">公司</a></li>
+                    <li><a href="/search?keyword=">经济</a></li>
+                    <li><a href="/search?keyword=">数据</a></li>
+                </ul>
+            </nav>
+            <div class="card_place">
+                {% for i in article %}
+                <div class="main_out">
+                    <div class="out_title"><a href="/article?id={{ i.id }}">{{ i.title }}</a></div>
+                    <div class="out_content">
+                        {{ i.summary }}
+                    </div>
+                    <div class="out_footer">
+                        {{ i.author }}      {{ i.create_date| date:"Y/m/d"}}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="page_place">
+                <ul class="pagination">
+                    {% if article.has_previous %}
+                        <li><a href="?page={{ article.previous_page_number }}">上一页</a></li>
+                    {% endif %}
+                    {% for p in page_list %}
+                        <li><a href="/list?type={{ article_type }}&&page={{ p }}">{{ p }}</a></li>
+                    {% endfor %}
+                    {% if article.has_next %}
+                    <li><a href="?page={{ article.next_page_number }}">下一页</a></li>
+                    {% endif %}
+                </ul>
+                <div class="page_jump">
+                    <span>跳转到</span>
+                    <input type="text">
+                    <span>页</span>
+                    <button>确定</button>
+                </div>
+            </div>
+        </div><div class="list_right">
+            <div class="search">
+                <div class="search_place">
+                    <input type="text" name="search" placeholder="输入关键词 按Enter搜索">
+                    <a href="/search"><div class="search_icon"></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

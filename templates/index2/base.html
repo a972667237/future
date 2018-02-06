@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/master.css">
+      {% block out_style %}
+      {% endblock %}
+    <title>{% block title %}期货の屋{% endblock %}</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- the header ~ -->
+      <header>
+        <div class="header_fixed">
+          <div class="site_name">
+            <a href="/">期货の屋</a>
+          </div>
+          <nav>
+            <ul>
+                {% if pageinfo == 1 %}
+              <li class="active"><a href="/">主页</a></li>
+                {% else %}
+                    <li><a href="/">主页</a></li>
+                {% endif %}
+                {% if pageinfo == 2 %}
+              <li class="active"><a href="/about">关于我们</a></li>
+                {% else %}
+              <li><a href="/about">关于我们</a></li>
+                {% endif %}
+                {% if pageinfo == 3 %}
+              <li class="active"><a href="/join">加入我们</a></li>
+                {% else %}
+              <li><a href="/join">加入我们</a></li>
+                {% endif %}
+                {% if pageinfo == 4 %}
+              <li class="active"><a href="/introduce">业务信息</a></li>
+                {% else %}
+              <li><a href="/introduce">业务信息</a></li>
+                {% endif %}
+                {% if pageinfo == 5 %}
+              <li class="active"><a href="/list?type=1">研究资讯</a></li>
+                {% else %}
+              <li><a href="/list?type=1">研究资讯</a></li>
+                {% endif %}
+                {% if pageinfo == 6 %}
+              <li class="active"><a href="/list?type=2">基础知识</a></li>
+                {% else %}
+              <li><a href="/list?type=2">基础知识</a></li>
+                {% endif %}
+                {% if pageinfo == 7 %}
+              <li class="active"><a href="/fee">费率一览</a></li>
+                {% else %}
+              <li><a href="/fee">费率一览</a></li>
+                {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- bread or detail -->
+      <article class="before-main">
+          {% block beforeMain %}
+          {% endblock %}
+      </article>
+      <main>
+        <!-- main contain -->
+        <div class="main_fixed">
+            {% block main %}
+            {% endblock %}
+        </div>
+      </main>
+      <footer>
+        <div class="footer_fixed">
+          <div class="friend_link">
+            <p><span>友情链接：</span> <a href="#">迈科期货</a> <a href="#">上海期货交易所</a> <a href="#">大连期货交易所</a> <a href="#">郑州期货交易所</a> </p>
+          </div>
+          <div class="copyright">
+            <p>Copyright © 2018.XXX All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'index2/base.html' %}
+
+{% block beforeMain %}
+    <div class="bread">
+        <a href="/">主页</a>
+        > <a href="/info">业务信息</a>
+    </div>
+    <div class="bm-title">
+        <span>业务信息</span>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="list">
+        <div class="list_left">
+            <nav>
+                <ul>
+                    <li class="active"><a href="/search?keyword=">中金所</a></li>
+                    <li><a href="/search?keyword=">上期所</a></li>
+                    <li><a href="/search?keyword=">大期所</a></li>
+                    <li><a href="/search?keyword=">郑期所</a></li>
+                    <li><a href="/search?keyword=">外盘</a></li>
+                    <li><a href="/search?keyword=">公司</a></li>
+                    <li><a href="/search?keyword=">经济</a></li>
+                    <li><a href="/search?keyword=">数据</a></li>
+                </ul>
+            </nav>
+            <div class="card_place info_card">
+                {% for i in intro %}
+                <div class="main_in">
+                  <div class="in_title">
+                    <span>{{ i.title }}</span>
+                  </div>
+                  <div class="main_out">
+                      {% autoescape off %}
+                    {{ i.content }}
+                      {% endautoescape %}
+                  </div>
+                </div>
+                {% endfor %}
+        </div><div class="list_right">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'index2/base.html' %}
+{% block beforeMain %}
+        <div class="detail">
+          <div class="detail_left">
+            <img src="/static/imgs/IMG_0684m.png" alt="">
+          </div>
+          <div class="detail_right">
+              <p>
+            她住在人迹罕到的路边，
+              </p>
+              <p>
+            住在野鸽泉的近旁，
+              </p>
+              <p>
+            她这位姑娘没有人来称赞，
+              </p>
+              <p>
+            很少人曾经把她爱上：
+              </p>
+              <p>
+            一朵半隐半现的紫罗兰，
+              </p>
+              <p>
+            开在长青苔的石旁；
+              </p>
+              <p>
+            美得象颗星忽闪忽闪
+              </p>
+              <p>
+            独一无二地挂天上。
+              </p>
+              <p>
+            可露西已被埋进了墓里！
+              </p>
+              <p>
+            对我呀可全变了样！
+              </p>
+          </div>
+        </div>
+{% endblock %}
+{% block main %}
+          <div class="main_left">
+            <div class="main_out highlights">
+              <ul>
+                  {% for i in hl %}
+                <li>
+                  <a href="/article?id={{ i.id }}">
+                    <span>{{ i.title }}</span>
+                  </a>
+                </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            <div class="main_in discovers">
+              <div class="in_title">
+                <span>研究资讯</span>
+              </div>
+              <div class="main_out">
+                <ul>
+                  {% for i in info %}
+                <li>
+                  <a href="/article?id={{ i.id }}">
+                    <span>{{ i.title }}</span>
+                  </a>
+                </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="main_right">
+            <div class="main_out guides">
+              <ul>
+                {% for i in hl %}
+                <li>
+                  <a href="/article?id={{ i.id }}">
+                    <span>{{ i.title }}</span>
+                  </a>
+                </li>
+                  {% endfor %}
+              </ul>
+            </div>
+            <div class="main_in knowledges">
+              <div class="in_title">
+                <span>基础知识</span>
+              </div>
+              <div class="main_out">
+                <ul>
+                  {% for i in fi %}
+                <li>
+                  <a href="/article?id={{ i.id }}">
+                    <span>{{ i.title }}</span>
+                  </a>
+                </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            </div>
+          </div>
+{% endblock %}
+      <footer>
+        <div class="footer_fixed">
+          <div class="friend_link">
+            <p><span>友情链接：</span> <a href="#">迈科期货</a> <a href="#">上海期货交易所</a> <a href="#">大连期货交易所</a> <a href="#">郑州期货交易所</a> </p>
+          </div>
+          <div class="copyright">
+            <p>Copyright © 2018.XXX All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

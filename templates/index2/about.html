@@ -1,0 +1,25 @@
+{% extends 'index2/base.html' %}
+
+{% block beforeMain %}
+    <div class="bread">
+        <a href="/">主页</a>
+        > <a href="/list?type=1">关于我们</a>
+    </div>
+    <div class="bm-title">
+        <span>关于我们</span>
+    </div>
+{% endblock %}
+
+{% block main %}
+     <div class="list">
+        <div class="list_left">
+            <div class="article_container">
+                {% autoescape off %}
+                {{ ab.content }}
+                {% endautoescape %}
+            </div>
+        </div><div class="list_right">
+
+        </div>
+    </div>
+{% endblock %}

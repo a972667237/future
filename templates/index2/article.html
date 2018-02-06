@@ -1,0 +1,54 @@
+{% extends 'index2/base.html' %}
+
+{% block title %}
+    {{ article.title }} -- 期货の屋
+{% endblock %}
+
+{% block beforeMain %}
+    <div class="bread">
+        <a href="/">主页</a>
+        > <a href="/list?type=1">研究资讯</a>
+        > <a href="">{{ article.title }}</a>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="article_list list">
+        <div class="list_left">
+        <div class="article_card">
+            <p class="card_title">{{ article.title }}</p>
+            <p class="card_info">{{ article.create_date| date:"Y/m/d"}}             {{ article.author }}</p>
+        </div>
+        <div class="article_content">
+            <div class="article_summary">摘要：{{ article.summary }}</div>
+            {% autoescape off %}
+                {{ article.content }}
+            {% endautoescape %}
+            <br>
+        关键词：
+            {% for i in article.keyword.all %}
+                <a href="/search?keyword={{ i.name }}">{{ i.name }}</a>
+            {% endfor %}
+            <div class="more_article main_out">
+                {% for i in more_article %}
+                <div class="more_article_card">
+                    <a href="/article?id={{ i.pk }}">{{ i.title }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div><div class="list_right">
+            <div class="more">
+                {% if article_front.title %}
+                    <span>上一篇：</span><br><br>
+                    <a href="/article?id={{ article_front.id }}">{{ article_front.title }}</a>
+                    <br><br>
+                {% endif %}
+                {% if article_then.title %}
+                    <span>下一篇：</span><br><br>
+                    <a href="/article?id={{ article_then.id }}">{{ article_then.title }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
