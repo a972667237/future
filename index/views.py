@@ -9,9 +9,10 @@ from .models import *
 
 def index(requests):
     pageinfo = 1
-    hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2)).order_by('-pk')[0:5]
+    hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2), isHithLight=True).order_by('-pk')[0:5]
     info = Article.objects.filter(isPublic=True, article_type=1).order_by('-pk')[0:5]
     fi = Article.objects.filter(isPublic=True, article_type=2).order_by('-pk')[0:5]
+    po = Article.objects.filter(isPublic=True, article_type=3).order_by('-pk')[0:5]
     head = MainPage_article.objects.all()
     return render(requests, 'index2/index.html', locals())
 
@@ -64,14 +65,14 @@ def article(requests):
     article = get_object_or_404(Article, pk=art_id, isPublic=True)
     pageinfo = 4 + article.article_type
     try:
-        article_front = Article.objects.exclude(article_type=0).get(pk=int(art_id)-1)
+        article_front = Article.objects.exclude(article_type=0).exclude(article_type=3).get(pk=int(art_id)-1)
     except:
         article_front = Article(title="")
     try:
-        article_then = Article.objects.exclude(article_type=0).get(pk=int(art_id)+1)
+        article_then = Article.objects.exclude(article_type=0).exclude(article_type=3).get(pk=int(art_id)+1)
     except:
         article_then = Article(title="")
-    more_article = Article.objects.filter(isPublic=True,keyword__in=article.keyword.all()).exclude(id=article.id).exclude(article_type=0).order_by("-pk")
+    more_article = Article.objects.filter(isPublic=True,keyword__in=article.keyword.all()).exclude(id=article.id).exclude(article_type=0).exclude(article_type=3).order_by("-pk")
     more_article_temp = []
     for i in more_article:
         canSave = True
@@ -100,6 +101,8 @@ def fee(requests):
 class Join(View):
     def get(self, requests):
         pageinfo = 3
+        po = Article.objects.filter(isPublic=True, article_type=3).order_by('-pk')[0:5]
+        jo = JoinPage_detail.objects.get(id=1)
         return render(requests, 'index2/join.html', locals())
 
     def post(self, requests):
@@ -121,3 +124,25 @@ class Join(View):
         except:
             return HttpResponse("不可预知的错误")
         return HttpResponse("提交成功")
+
+def search(requests):
+    pageinfo = 8
+    kv = requests.GET.get('keyword', u'移动')
+    article = Article.objects.filter(isPublic=True, keyword__name__contains=kv, article_type__in=(1, 2))
+    art_len = article.count()
+    paginator = Paginator(article, 5)
+    try:
+        page = int(requests.GET.get('page', 1))
+        article = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        article = paginator.page(1)
+        page = 1
+    art_index = page
+    front = art_index - 1
+    if front > 2:
+        front = 2
+    end = 4 - front
+    if end + art_index > art_len / 5 + 1:
+        end = int(art_len / 5 + 1 - art_index)
+    page_list = range(art_index - front, art_index + end + 1)
+    return render(requests, 'index2/article_list.html', locals())

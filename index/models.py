@@ -7,7 +7,8 @@ from DjangoUeditor.models import UEditorField
 ARTICLE_TYPE = (
     (0, u'页面内容'),
     (1, u'研究资讯'),
-    (2, u'基础知识')
+    (2, u'基础知识'),
+    (3, u'业务指南')
 )
 
 AIM_TYPE = (
@@ -105,7 +106,7 @@ class Join_form(models.Model):
         verbose_name = '加入我们提交内容'
         verbose_name_plural = verbose_name
     def __unicode__(self):
-        return self.name + "/" + self.create_date.strftime('%Y-%m-%d')
+        return self.name + "/" + self.create_date.strftime('%Y-%m-%d') + "/" + (u"已读" if self.isRead else u"未读"  )
 
 
 class MainPage_article(models.Model):
@@ -114,3 +115,12 @@ class MainPage_article(models.Model):
     class Meta:
         verbose_name = '首页头图管理'
         verbose_name_plural = verbose_name
+
+class JoinPage_detail(models.Model):
+    topInfo = UEditorField(u'顶部信息', max_length=50000, null=True)
+    bottomInfo = UEditorField(u'底部信息', max_length=50000, null=True)
+    class Meta:
+        verbose_name = '加入我们页面信息'
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return u"页面信息"

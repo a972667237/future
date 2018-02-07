@@ -14,10 +14,11 @@
 <div class="list">
         <div class="list_left">
             <div class="form_content">
-                <p class="form_title">
-                    尊敬的先生&女士：<br>
-                    您好！欢迎您的访问，如果您有意加入期货之屋的大家庭，可以留下您的联系方式，届时会有雇主联系您，专业为您服务！
-                </p>
+                <div class="form_title">
+                    {% autoescape off %}
+                        {{ jo.topInfo }}
+                    {% endautoescape %}
+                </div>
                 <form action="" method="post" id="join_form">
                     <div class="form_item">
                         <label for="name">怎么称呼您：</label>
@@ -44,8 +45,19 @@
                         <button type="button" id="submit_button">点击提交</button>
                     </div>
                 </form>
+                <div class="form_bottom">
+                    {% autoescape off %}
+                            {{ jo.bottomInfo }}
+                    {% endautoescape %}
+                </div>
             </div>
         </div><div class="list_right">
+            <div class="outer_link">
+                <div class="outer_title">业务指南</div>
+                {% for i in po %}
+                <a href="/article?id={{ i.id }}">{{ i.title }}</a>
+                {% endfor %}
+            </div>
         </div>
     </div>
     <script src="/static/js/jquery-1.11.3.min.js"></script>

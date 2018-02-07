@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'introduce', introduce),
     url(r'article', article),
     url(r'fee', fee),
-    url(r'join', Join.as_view())
+    url(r'join', Join.as_view()),
+    url(r'search', search),
 ]
