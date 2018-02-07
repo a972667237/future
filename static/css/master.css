@@ -6,6 +6,8 @@ html, body{
   width: 100%;
   height: 100%;
   font-family: "tiny-black";
+  color: #120504;
+  font-size: 14px;
 }
 
 .container{
