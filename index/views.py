@@ -64,6 +64,8 @@ def article(requests):
     art_id = requests.GET.get('id')
     article = get_object_or_404(Article, pk=art_id, isPublic=True)
     pageinfo = 4 + article.article_type
+    if article.article_type == 3:
+        pageinfo = 9
     try:
         article_front = Article.objects.exclude(article_type=0).exclude(article_type=3).get(pk=int(art_id)-1)
     except:
