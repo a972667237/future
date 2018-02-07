@@ -429,8 +429,13 @@ main .page_place .pagination li{
   font-size: 14px;
 }
 
+.form_item label{
+  font-size:14px;
+  vertical-align: top;
+}
+
 .form_item{
-  padding: 2% 0;
+  padding: 1em 0;
   border-bottom: 1px solid #e6e3dc;
 }
 
