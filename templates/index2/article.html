@@ -7,8 +7,12 @@
 {% block beforeMain %}
     <div class="bread">
         <a href="/">主页</a>
+        {% if article.article_type == 1 %}
         > <a href="/list?type=1">研究资讯</a>
-        > <a href="">{{ article.title }}</a>
+        {% else %}
+        > <a href="/list?type=2">基础知识</a>
+        {% endif %}
+        > <a href="/article?id={{ article.id }}">{{ article.title }}</a>
     </div>
 {% endblock %}
 

@@ -8,3 +8,7 @@ admin.site.register(Introduce_content)
 admin.site.register(Fee_content)
 admin.site.register(Join_form)
 admin.site.register(Key_word)
+
+admin.site.register(Introduce_Keyword)
+admin.site.register(Fee_Keyword)
+admin.site.register(MainPage_article)

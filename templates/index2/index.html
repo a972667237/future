@@ -2,39 +2,12 @@
 {% block beforeMain %}
         <div class="detail">
           <div class="detail_left">
-            <img src="/static/imgs/IMG_0684m.png" alt="">
+            <img src="/media/{{ head.0.image }}" alt="">
           </div>
           <div class="detail_right">
-              <p>
-            她住在人迹罕到的路边，
-              </p>
-              <p>
-            住在野鸽泉的近旁，
-              </p>
-              <p>
-            她这位姑娘没有人来称赞，
-              </p>
-              <p>
-            很少人曾经把她爱上：
-              </p>
-              <p>
-            一朵半隐半现的紫罗兰，
-              </p>
-              <p>
-            开在长青苔的石旁；
-              </p>
-              <p>
-            美得象颗星忽闪忽闪
-              </p>
-              <p>
-            独一无二地挂天上。
-              </p>
-              <p>
-            可露西已被埋进了墓里！
-              </p>
-              <p>
-            对我呀可全变了样！
-              </p>
+              {% autoescape off %}
+                  {{ head.0.article.content }}
+              {% endautoescape %}
           </div>
         </div>
 {% endblock %}

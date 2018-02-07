@@ -14,16 +14,37 @@
     <div class="list">
         <div class="list_left">
             <nav>
+            {% if pageinfo == 4 %}
                 <ul>
-                    <li class="active"><a href="/search?keyword=">中金所</a></li>
-                    <li><a href="/search?keyword=">上期所</a></li>
-                    <li><a href="/search?keyword=">大期所</a></li>
-                    <li><a href="/search?keyword=">郑期所</a></li>
-                    <li><a href="/search?keyword=">外盘</a></li>
-                    <li><a href="/search?keyword=">公司</a></li>
-                    <li><a href="/search?keyword=">经济</a></li>
-                    <li><a href="/search?keyword=">数据</a></li>
+                    {% if keyword == 0 %}
+                    <li class="active"><a href="/introduce?keyword=0">最新</a></li>
+                    {% else %}
+                    <li><a href="/introduce?keyword=0">最新</a></li>
+                    {% endif %}
+                    {% for kw in hot_key %}
+                        {% if kw.id == keyword %}
+                        <li class="active"><a href="/introduce?keyword={{ kw.id }}">{{ kw.name }}</a></li>
+                        {% else %}
+                        <li><a href="/introduce?keyword={{ kw.id }}">{{ kw.name }}</a></li>
+                        {% endif %}
+                    {% endfor %}
                 </ul>
+            {% else %}
+                <ul>
+                    {% if keyword == 0 %}
+                    <li class="active"><a href="/fee?keyword=0">最新</a></li>
+                    {% else %}
+                    <li><a href="/fee?keyword=0">最新</a></li>
+                    {% endif %}
+                    {% for kw in hot_key %}
+                        {% if kw.id == keyword %}
+                        <li class="active"><a href="/fee?keyword={{ kw.id }}">{{ kw.name }}</a></li>
+                        {% else %}
+                        <li><a href="/fee?keyword={{ kw.id }}">{{ kw.name }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
             </nav>
             <div class="card_place info_card">
                 {% for i in intro %}

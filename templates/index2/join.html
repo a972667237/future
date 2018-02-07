@@ -18,7 +18,7 @@
                     尊敬的先生&女士：<br>
                     您好！欢迎您的访问，如果您有意加入期货之屋的大家庭，可以留下您的联系方式，届时会有雇主联系您，专业为您服务！
                 </p>
-                <form action="" method="post">
+                <form action="" method="post" id="join_form">
                     <div class="form_item">
                         <label for="name">怎么称呼您：</label>
                         <input type="text" name="name" id="name">
@@ -41,11 +41,28 @@
                     </div>
                     {% csrf_token %}
                     <div class="form_item">
-                        <button type="submit">点击提交</button>
+                        <button type="button" id="submit_button">点击提交</button>
                     </div>
                 </form>
             </div>
         </div><div class="list_right">
         </div>
     </div>
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script>
+        $('#submit_button').click(function () {
+            $.ajax({
+                type: 'post',
+                url: '/join',
+                dataType: 'text',
+                data: $("#join_form").serialize(),
+                success: function (data) {
+                    alert(data);
+                    if (data == "提交成功") {
+                        document.location.reload();
+                    }
+                }
+            });
+        });
+    </script>
 {% endblock %}

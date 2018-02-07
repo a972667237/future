@@ -34,6 +34,7 @@ class Article(models.Model):
     article_type = models.IntegerField(u'文章类型', choices=ARTICLE_TYPE, default=1)
     author = models.CharField(u'作者', max_length=10)
     keyword = models.ManyToManyField(Key_word)
+    isHithLight = models.BooleanField(u'是否为要闻', default=False)
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name
@@ -52,11 +53,32 @@ class ContactInfo(models.Model):
         return self.name
 
 
+class Introduce_Keyword(models.Model):
+    name = models.CharField(u"关键词", max_length=20)
+
+    class Meta:
+        verbose_name = "业务信息关键词"
+        verbose_name_plural = verbose_name
+
+    def __unicode__(self):
+        return self.name
+
+class Fee_Keyword(models.Model):
+    name = models.CharField(u"关键词", max_length=20)
+
+    class Meta:
+        verbose_name = "费率关键词"
+        verbose_name_plural = verbose_name
+
+    def __unicode__(self):
+        return self.name
+
 class Introduce_content(models.Model):
     title = models.CharField(u"标题", max_length=100)
     content = UEditorField(u'内容', max_length=100000)
+    keyword = models.ManyToManyField(Introduce_Keyword)
     class Meta:
-        verbose_name = '介绍页面'
+        verbose_name = '业务信息页面内容'
         verbose_name_plural = verbose_name
     def __unicode__(self):
         return self.title
@@ -64,8 +86,9 @@ class Introduce_content(models.Model):
 class Fee_content(models.Model):
     title = models.CharField(u"标题", max_length=100)
     content = UEditorField(u'内容', max_length=100000)
+    keyword = models.ManyToManyField(Fee_Keyword)
     class Meta:
-        verbose_name = '收费页面'
+        verbose_name = '费率页面'
         verbose_name_plural = verbose_name
     def __unicode__(self):
         return self.title
@@ -85,3 +108,9 @@ class Join_form(models.Model):
         return self.name + "/" + self.create_date.strftime('%Y-%m-%d')
 
 
+class MainPage_article(models.Model):
+    image = models.ImageField(u"图片")
+    article = models.ForeignKey(Article)
+    class Meta:
+        verbose_name = '首页头图管理'
+        verbose_name_plural = verbose_name
