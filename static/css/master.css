@@ -11,6 +11,16 @@ html, body{
 }
 a{
   color: #120504;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+/*a:visited{*/
+  /*color:blue;*/
+/*}*/
+main a:visited{
+  color: #0e4ca1;
 }
 
 .container{
@@ -80,6 +90,7 @@ nav ul li a{
 
 .list_left nav ul li a{
   font-size: 14px;
+  color: #666;
 }
 
 nav ul li a:hover{
@@ -87,7 +98,7 @@ nav ul li a:hover{
 }
 
 nav ul .active a{
-  color: #0e4ca1;
+  color: #0e4ca1 !important;
 }
 
 nav ul .active{
@@ -146,7 +157,6 @@ main .main_out{
   border-left: 6px solid #0e4ca1;
   font-size: 14px;
   padding-left: 20px;
-  font-weight: 600;
 }
 
 main .main_out::before{
@@ -233,16 +243,17 @@ footer .copyright{
   margin-top: 30px;
 }
 .out_title{
-  font-size: 20px;
+  font-size: 18px;
 }
 .out_content{
   padding-top: 10px;
   padding-bottom: 20px;
-  font-size: 14px;
-  color: #919191;
+  font-size: 16px;
+  color: #666;
 }
 .out_footer{
-  color: #C3C3C3;
+  color: #999;
+  font-size: 12px;
 }
 
 
