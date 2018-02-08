@@ -15,14 +15,11 @@ a{
 }
 a:hover{
   text-decoration: none;
-  color: #0e4ca1;
+  color: #0e4ca1 !important;
 }
 /*a:visited{*/
   /*color:blue;*/
 /*}*/
-main a:visited{
-  color: #0e4ca1;
-}
 
 .container{
   width: 100%;
