@@ -13,8 +13,39 @@
 {% endblock %}
 {% block main %}
           <div class="main_left">
-            <div class="main_out highlights">
-              <ul>
+{#            <div class="main_out highlights">#}
+{#              <ul>#}
+{#                  {% for i in hl %}#}
+{#                <li>#}
+{#                  <a href="/article?id={{ i.id }}">#}
+{#                    <span>{{ i.title }}</span>#}
+{#                  </a>#}
+{#                </li>#}
+{#                  {% endfor %}#}
+{#              </ul>#}
+{#            </div>#}
+{#            <div class="main_in discovers">#}
+{#              <div class="in_title">#}
+{#                <span>研究资讯</span>#}
+{#              </div>#}
+{#              <div class="main_out">#}
+{#                <ul>#}
+{#                  {% for i in info %}#}
+{#                <li>#}
+{#                  <a href="/article?id={{ i.id }}">#}
+{#                    <span>{{ i.title }}</span>#}
+{#                  </a>#}
+{#                </li>#}
+{#                  {% endfor %}#}
+{#                </ul>#}
+{#              </div>#}
+{#            </div>#}
+            <div class="main_in discovers">
+              <div class="in_title">
+                <span>近期要闻</span>
+              </div>
+              <div class="main_out">
+                <ul>
                   {% for i in hl %}
                 <li>
                   <a href="/article?id={{ i.id }}">
@@ -22,7 +53,8 @@
                   </a>
                 </li>
                   {% endfor %}
-              </ul>
+                </ul>
+              </div>
             </div>
             <div class="main_in discovers">
               <div class="in_title">
@@ -40,20 +72,7 @@
                 </ul>
               </div>
             </div>
-          </div>
-          <div class="main_right">
-            <div class="main_out guides">
-              <ul>
-                {% for i in po %}
-                <li>
-                  <a href="/article?id={{ i.id }}">
-                    <span>{{ i.title }}</span>
-                  </a>
-                </li>
-                  {% endfor %}
-              </ul>
-            </div>
-            <div class="main_in knowledges">
+            <div class="main_in discovers">
               <div class="in_title">
                 <span>基础知识</span>
               </div>
@@ -69,6 +88,78 @@
                 </ul>
               </div>
             </div>
+            <div class="main_in discovers">
+              <div class="in_title">
+                <span>业务指南</span>
+              </div>
+              <div class="main_out">
+                <ul>
+                  {% for i in po %}
+                <li>
+                  <a href="/article?id={{ i.id }}">
+                    <span>{{ i.title }}</span>
+                  </a>
+                </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="main_right">
+{#            <div class="main_out guides">#}
+{#              <ul>#}
+{#                {% for i in po %}#}
+{#                <li>#}
+{#                  <a href="/article?id={{ i.id }}">#}
+{#                    <span>{{ i.title }}</span>#}
+{#                  </a>#}
+{#                </li>#}
+{#                  {% endfor %}#}
+{#              </ul>#}
+{#            </div>#}
+{#            <div class="main_in knowledges">#}
+{#              <div class="in_title">#}
+{#                <span>基础知识</span>#}
+{#              </div>#}
+{#              <div class="main_out">#}
+{#                <ul>#}
+{#                  {% for i in fi %}#}
+{#                <li>#}
+{#                  <a href="/article?id={{ i.id }}">#}
+{#                    <span>{{ i.title }}</span>#}
+{#                  </a>#}
+{#                </li>#}
+{#                  {% endfor %}#}
+{#                </ul>#}
+{#              </div>#}
+{#            </div>#}
+{#            </div>#}
+            <div class="main_in right_in">
+                <div class="in_title">
+                    <span>个股期权</span>
+                </div>
+                <img src="/static/imgs/index_page.jpg" alt="">
+                <p>
+                    期权是交易双方关于未来买卖权利达成的合约。就个股期权来说，期权的买方（权利方）通过网卖方（义务方）支付一定的费用（权利金），获得一种权利，即有权在约定的时间以约定的价格向期权卖方买入或卖出约定数量的特定股票或ETF。个股期权交易合约是指由交易所统一制定的、规定合约买方有权在将来某一时间以特定价格买入或者卖出约定标的证券的标准化合约。买方以
+                </p>
+            </div>
+            <div class="main_in right_in">
+                <div class="in_title">
+                    <span>个股期权</span>
+                </div>
+                <img src="/static/imgs/index_page.jpg" alt="">
+                <p>
+                    期权是交易双方关于未来买卖权利达成的合约。就个股期权来说，期权的买方（权利方）通过网卖方（义务方）支付一定的费用（权利金），获得一种权利，即有权在约定的时间以约定的价格向期权卖方买入或卖出约定数量的特定股票或ETF。个股期权交易合约是指由交易所统一制定的、规定合约买方有权在将来某一时间以特定价格买入或者卖出约定标的证券的标准化合约。买方以
+                </p>
+            </div>
+            <div class="main_in right_in">
+                <div class="in_title">
+                    <span>个股期权</span>
+                </div>
+                <img src="/static/imgs/index_page.jpg" alt="">
+                <p>
+                    期权是交易双方关于未来买卖权利达成的合约。就个股期权来说，期权的买方（权利方）通过网卖方（义务方）支付一定的费用（权利金），获得一种权利，即有权在约定的时间以约定的价格向期权卖方买入或卖出约定数量的特定股票或ETF。个股期权交易合约是指由交易所统一制定的、规定合约买方有权在将来某一时间以特定价格买入或者卖出约定标的证券的标准化合约。买方以
+                </p>
             </div>
           </div>
 {% endblock %}

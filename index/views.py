@@ -128,7 +128,8 @@ class Join(View):
         return HttpResponse("提交成功")
 
 def search(requests):
-    pageinfo = 8
+    pageinfo = 110
+    keyword = 0
     kv = requests.GET.get('keyword', u'移动')
     article = Article.objects.filter(isPublic=True, keyword__name__contains=kv, article_type__in=(1, 2))
     art_len = article.count()

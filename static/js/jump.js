@@ -11,8 +11,16 @@ var search = function() {
 var pageJump = function() {
     let page = document.getElementsByName('page')[0].value;
     let t = document.getElementsByName('now_type')[0].value;
-    if (page) {
+    let searchKeyword = document.getElementsByName('searchKeyword')[0].value;
+    if (searchKeyword){
+        if (page) {
+        window.location.href = "/search?keyword=" + searchKeyword + "&page=" + page;
+        }
+    }
+    if (t) {
+        if (page) {
         window.location.href = "/list?type=" + t + "&page=" + page;
+        }
     }
 }
 

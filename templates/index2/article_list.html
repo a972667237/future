@@ -3,15 +3,80 @@
 {% block beforeMain %}
     <div class="bread">
         <a href="/">主页</a>
+        {% if pageinfo == 5 %}
         > <a href="/list?type=1">研究资讯</a>
+        {% elif pageinfo == 6 %}
+        > <a href="/list?type=2">基础知识</a>
+        {% else %}
+        > <a href="/search?keyword=移动">搜索结果</a>
+        {% endif %}
     </div>
     <div class="bm-title">
+        {% if pageinfo == 5 %}
         <span>研究资讯</span>
+        {% elif pageinfo == 6 %}
+        <span>基础知识</span>
+        {% else %}
+        <span>搜索: {{ kv }}</span>
+        {% endif %}
+
     </div>
 {% endblock %}
 
 {% block main %}
     <div class="list">
+        {% if pageinfo == 110 %}
+            <div class="list_left">
+            <nav>
+                <ul>
+                    <li class="active"><a href="/search?keyword={{ kv }}">最新</a></li>
+                </ul>
+            </nav>
+            <div class="card_place">
+                {% for i in article %}
+                <div class="main_out">
+                    <div class="out_title"><a href="/article?id={{ i.id }}">{{ i.title }}</a></div>
+                    <div class="out_content">
+                        {{ i.summary }}
+                    </div>
+                    <div class="out_footer">
+                        {{ i.author }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ i.create_date| date:"Y/m/d"}}
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="page_place">
+                <ul class="pagination">
+                    {% if article.has_previous %}
+                        <li><a href="/search?page={{ article.previous_page_number }}&keyword={{ kv }}">上一页</a></li>
+                    {% endif %}
+                    {% for p in page_list %}
+                        <li><a href="/search?keyword={{ kv }}&&page={{ p }}">{{ p }}</a></li>
+                    {% endfor %}
+                    {% if article.has_next %}
+                    <li><a href="/search?page={{ article.next_page_number }}&keyword={{ kv }}">下一页</a></li>
+                    {% endif %}
+                </ul>
+                <div class="page_jump">
+                    <input type="hidden" name="now_type" value="{{ article_type }}">
+                    <input type="hidden" name="searchKeyword" value="{{ kv }}">
+                    <span>跳转到</span>
+                    <input type="text" name="page">
+                    <span>页</span>
+                    <button id="page_jump_icon">确定</button>
+                </div>
+            </div>
+        </div><div class="list_right">
+            <div class="search">
+                <div class="search_place">
+                    <input type="text" name="search" placeholder="输入关键词 按Enter搜索">
+                    <a href="#" id="keyword_search"><div class="search_icon"></div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+        {% else %}
         <div class="list_left">
             <nav>
                 <ul>
@@ -71,6 +136,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>{% endif %}
     <script src="/static/js/jump.js"></script>
 {% endblock %}

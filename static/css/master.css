@@ -184,9 +184,14 @@ main .main_out ul li {
 main .main_left, main .main_right{
   display: inline-block;
   vertical-align: top;
-  padding-top: 30px;
-  width: 48%;
   overflow: hidden;
+}
+main .main_left{
+  width: 40%;
+}
+main .main_right{
+  width: 30%;
+  margin-left: 29%;
 }
 
 .main_in{
@@ -194,17 +199,26 @@ main .main_left, main .main_right{
 }
 .main_in .in_title{
   position: relative;
-  left: 10%;
-  padding: 3% 0;
+  left: 0;
+  padding: 13px 0;
   width: 100%;
   border-bottom: 1px solid #e6e3dc;
   font-size: 24px;
   font-weight: 600;
 }
 
+.main_in .main_out{
+  left: 0;
+}
+
+.right_in img{
+  padding: 20px 0.2em;
+  width: 100%;
+}
+
 .in_title + .main_out{
-  margin-top: 52px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 

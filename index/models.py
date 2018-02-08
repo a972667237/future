@@ -124,3 +124,15 @@ class JoinPage_detail(models.Model):
         verbose_name_plural = verbose_name
     def __unicode__(self):
         return u"页面信息"
+
+
+class Friend_link(models.Model):
+    link_name = models.CharField(u'友链名', max_length=100)
+    link_url = models.URLField(u'链接')
+    isShow = models.BooleanField(u'是否展示', default=True)
+    class Meta:
+        verbose_name = '友情链接管理'
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.link_name
+
