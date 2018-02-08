@@ -103,7 +103,7 @@ def fee(requests):
 class Join(View):
     def get(self, requests):
         pageinfo = 3
-        po = Article.objects.filter(isPublic=True, article_type=3).order_by('-pk')[0:5]
+        po = Article.objects.filter(isPublic=True, article_type=3).order_by('-pk')[0:10]
         jo = JoinPage_detail.objects.get(id=1)
         return render(requests, 'index2/join.html', locals())
 

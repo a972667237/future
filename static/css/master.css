@@ -9,6 +9,9 @@ html, body{
   color: #120504;
   font-size: 14px;
 }
+a{
+  color: #120504;
+}
 
 .container{
   width: 100%;
@@ -71,6 +74,9 @@ nav ul li a{
   padding: 0 0 1em 0;
   font-weight: 600;
   color: #120504;
+  min-width: 4em;
+  text-align: center;
+  color: #120504;
 }
 
 .list_left nav ul li a{
@@ -98,11 +104,11 @@ nav ul .active{
 .bm-title{
   padding: 0.5em 0 0.2em 0;
   font-size: 28px;
+  font-weight: 600;
 }
 
 .bread{
   font-size: 12px;
-  font-weight:600;
 }
 
 .detail_left, .detail_right{
