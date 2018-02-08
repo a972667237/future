@@ -143,7 +143,7 @@ nav ul .active{
 main .main_out{
   position: relative;
   left: 10%;
-  border-left: 8px solid #0e4ca1;
+  border-left: 6px solid #0e4ca1;
   font-size: 14px;
   padding-left: 20px;
   font-weight: 600;
@@ -176,13 +176,13 @@ main .main_out ul li {
 main .main_left, main .main_right{
   display: inline-block;
   vertical-align: top;
-  padding-top: 36px;
+  padding-top: 30px;
   width: 48%;
   overflow: hidden;
 }
 
 .main_in{
-  margin-top:52px;
+  margin-top:30px;
 }
 .main_in .in_title{
   position: relative;
@@ -207,7 +207,7 @@ footer .copyright{
 .list_left, .list_right{
   display: inline-block;
   vertical-align: top;
-  padding-top: 36px;
+  padding-top: 30px;
 }
 
 .list_left{
@@ -275,7 +275,11 @@ main .page_place .pagination li{
 .search input[type="text"]:focus{
   border: none;
   outline: none;
-  border-bottom: 1px solid #1ebceb;
+  border-bottom: 1px solid #666;
+}
+
+.search input::-webkit-input-placeholder, .search input:-moz-placeholder, .search input::-moz-placeholder, .search input:-ms-input-placeholder{
+  color: #666;
 }
 
 .search_icon{
@@ -474,6 +478,11 @@ main .page_place .pagination li{
 
 .friend_link{
   font-size: 14px;
+}
+
+.friend_link span{
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 .copyright{
