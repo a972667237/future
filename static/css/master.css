@@ -25,7 +25,6 @@ main{
   padding-top: 0;
 }
 .before-main{
-  padding: 1% 0;
   width: 100%;
   border-bottom: 1px solid #e6e3dc;
 }
@@ -95,6 +94,10 @@ nav ul .active{
   border-bottom: 3px solid #0e4ca1;
 }
 
+.detail{
+  padding: 1% 0;
+}
+
 .detail, .bread, .bm-title{
   max-width: 925px;
   width: 100%;
@@ -102,13 +105,13 @@ nav ul .active{
 }
 
 .bm-title{
-  padding: 0.5em 0 0.2em 0;
+  padding: 0px 0 28px 0;
   font-size: 28px;
-  font-weight: 600;
 }
 
 .bread{
   font-size: 12px;
+  padding: 24px 0;
 }
 
 .detail_left, .detail_right{
@@ -460,7 +463,7 @@ main .page_place .pagination li{
 
 .outer_link a{
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 12px;
 }
 
