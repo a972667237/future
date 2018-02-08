@@ -29,10 +29,12 @@
                 {{ article.content }}
             {% endautoescape %}
             <br>
-        关键词：
+        <div class="keyword_place">
+        <div class="keyword_icon"></div>
             {% for i in article.keyword.all %}
                 <a href="/search?keyword={{ i.name }}">{{ i.name }}</a>
             {% endfor %}
+        </div>
             <div class="more_article main_out">
                 {% for i in more_article %}
                 <div class="more_article_card">

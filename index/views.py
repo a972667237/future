@@ -84,7 +84,7 @@ def article(requests):
                 break
         if canSave:
             more_article_temp.append(i)
-            if len(more_article) == 5:
+            if len(more_article_temp) == 5:
                 break
     more_article = more_article_temp
     return render(requests, 'index2/article.html', locals())

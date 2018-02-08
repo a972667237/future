@@ -159,7 +159,7 @@ main .main_out{
 
 main .main_out::before{
   position: absolute;
-  color: #0e4ca1;
+  color: #120504;
   top: 0;
   left: -10%;
   width: 10px;
@@ -362,8 +362,8 @@ main .page_place .pagination li{
 }
 
 .list .article_content .more_article::before{
-  content: "相关信息";
-  left: -4%;
+  content: "相关阅读";
+  left: -5%;
   line-height: 16px;
 }
 
@@ -496,4 +496,21 @@ main .page_place .pagination li{
 
 .copyright{
   font-size: 10px;
+}
+
+.keyword_place{
+  width: 100%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e6e3dc;
+}
+
+.keyword_place .keyword_icon{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 18px;
+  height: 18px;
+  background-image: url(/static/imgs/keyword.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
