@@ -62,12 +62,13 @@ nav{
 
 nav ul li{
   display: inline-block;
+  margin-right: 2em;
 }
 
 nav ul li a{
   display: block;
   font-size: 14px;
-  padding: 0 1em 1em 1em;
+  padding: 0 0 1em 0;
   font-weight: 600;
   color: #120504;
 }
@@ -97,7 +98,6 @@ nav ul .active{
 .bm-title{
   padding: 0.5em 0 0.2em 0;
   font-size: 28px;
-  font-weight: 600;
 }
 
 .bread{
@@ -455,10 +455,18 @@ main .page_place .pagination li{
 .outer_link a{
   display: block;
   margin-top: 30px;
-  font-weight: 600;
+  font-size: 12px;
 }
 
 .form_bottom{
   padding-top: 1em;
   line-height: 1.3em;
+}
+
+.friend_link{
+  font-size: 14px;
+}
+
+.copyright{
+  font-size: 10px;
 }

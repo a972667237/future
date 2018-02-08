@@ -11432,7 +11432,7 @@ UE.plugins['font'] = function () {
             { name: 'arialBlack', val: 'arial black,avant garde'},
             { name: 'comicSansMs', val: 'comic sans ms'},
             { name: 'impact', val: 'impact,chicago'},
-            { name: 'timesNewRoman', val: 'times new roman'}
+            { name: 'timesNewRoman', val: 'times new roman'},
         ],
         'fontsize': [10, 11, 12, 14, 16, 18, 20, 24, 36]
     });
