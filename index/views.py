@@ -7,8 +7,10 @@ from django.http import HttpResponse
 from .models import *
 # Create your views here.
 
+
 def index(requests):
     pageinfo = 1
+    fr = Friend_link.objects.filter(isShow=True)
     hl = Article.objects.filter(isPublic=True, article_type__in=(1, 2), isHithLight=True).order_by('-pk')[0:5]
     info = Article.objects.filter(isPublic=True, article_type=1).order_by('-pk')[0:5]
     fi = Article.objects.filter(isPublic=True, article_type=2).order_by('-pk')[0:5]
@@ -18,10 +20,12 @@ def index(requests):
 
 def about(requests):
     pageinfo = 2
+    fr = Friend_link.objects.filter(isShow=True)
     ab = get_object_or_404(Article, title=u"关于我们")
     return render(requests, 'index2/about.html', locals())
 
 def list(requests):
+    fr = Friend_link.objects.filter(isShow=True)
     article_type = int(requests.GET.get('type', 1))
     keyword = int(requests.GET.get('keyword', 0))
     hot_key = Key_word.objects.all()[0:6]
@@ -50,6 +54,7 @@ def list(requests):
     return render(requests, 'index2/article_list.html', locals())
 
 def introduce(requests):
+    fr = Friend_link.objects.filter(isShow=True)
     pageinfo = 4
     keyword = int(requests.GET.get('keyword', 0))
     hot_key = Introduce_Keyword.objects.all()
@@ -61,6 +66,7 @@ def introduce(requests):
     return render(requests, 'index2/info.html', locals())
 
 def article(requests):
+    fr = Friend_link.objects.filter(isShow=True)
     art_id = requests.GET.get('id')
     article = get_object_or_404(Article, pk=art_id, isPublic=True)
     pageinfo = 4 + article.article_type
@@ -91,6 +97,7 @@ def article(requests):
 
 def fee(requests):
     pageinfo = 7
+    fr = Friend_link.objects.filter(isShow=True)
     keyword = int(requests.GET.get('keyword', 0))
     hot_key = Fee_Keyword.objects.all()
     if keyword == 0:
@@ -103,6 +110,7 @@ def fee(requests):
 class Join(View):
     def get(self, requests):
         pageinfo = 3
+        fr = Friend_link.objects.filter(isShow=True)
         po = Article.objects.filter(isPublic=True, article_type=3).order_by('-pk')[0:10]
         jo = JoinPage_detail.objects.get(id=1)
         return render(requests, 'index2/join.html', locals())
@@ -130,6 +138,7 @@ class Join(View):
 def search(requests):
     pageinfo = 110
     keyword = 0
+    fr = Friend_link.objects.filter(isShow=True)
     kv = requests.GET.get('keyword', u'移动')
     article = Article.objects.filter(isPublic=True, keyword__name__contains=kv, article_type__in=(1, 2))
     art_len = article.count()

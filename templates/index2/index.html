@@ -2,11 +2,17 @@
 {% block beforeMain %}
         <div class="detail">
           <div class="detail_left">
-            <img src="/media/{{ head.0.image }}" alt="">
+              <div class="banner">
+                  <ul>
+                      <li><img src="/media/{{ head.0.image }}" alt=""></li>
+                      <li><img src="/media/{{ head.0.image }}" alt=""></li>
+
+                  </ul>
+              </div>
           </div>
           <div class="detail_right">
               {% autoescape off %}
-                  {{ head.0.article.content }}
+                  {{ head.0.article }}
               {% endautoescape %}
           </div>
         </div>
@@ -162,4 +168,9 @@
                 </p>
             </div>
           </div>
+    <script src="/static/js/jquery-1.11.3.min.js"></script>
+    <script src="/static/js/jquery.terseBanner.min.js"></script>
+    <script>
+        $('.banner').terseBanner();
+    </script>
 {% endblock %}

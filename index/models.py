@@ -111,7 +111,7 @@ class Join_form(models.Model):
 
 class MainPage_article(models.Model):
     image = models.ImageField(u"图片")
-    article = models.ForeignKey(Article)
+    article = UEditorField(u'内容')
     class Meta:
         verbose_name = '首页头图管理'
         verbose_name_plural = verbose_name
