@@ -38,7 +38,7 @@ def list(requests):
         k = Key_word.objects.filter(id=keyword)
         article = Article.objects.filter(isPublic=True, article_type=article_type, keyword=k)
     art_len = article.count()
-    paginator = Paginator(article, 5)
+    paginator = Paginator(article, 10)
     try:
         page = int(requests.GET.get('page', 1))
         article = paginator.page(page)
@@ -50,8 +50,8 @@ def list(requests):
     if front > 2:
         front = 2
     end = 4 - front
-    if end + art_index > art_len/5 + 1:
-        end = int(art_len/5 + 1 - art_index)
+    if end + art_index > art_len/10 + 1:
+        end = int(art_len/10 + 1 - art_index)
     page_list = range(art_index-front, art_index+end+1)
     return render(requests, 'index2/article_list.html', locals())
 
