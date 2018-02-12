@@ -157,6 +157,7 @@ nav ul .active{
 
 .detail_left{
   max-width: 520px;
+  height: 315px;
 }
 
 .detail_right{
@@ -367,7 +368,7 @@ main .page_place .pagination li{
 .page_jump input[type="text"]{
   border: 0;
   width: 1.5em;
-  margin: -0.5em;
+  margin: -0.2em;
   text-align: center;
 }
 
