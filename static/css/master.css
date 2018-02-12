@@ -321,6 +321,7 @@ main .page_place .pagination li{
   width: 100%;
   padding: 1% 2% 30px 8%;
   border-bottom: 1px solid #e6e3dc;
+  margin-top: -5px;
 }
 
 .search input[type="text"]{
