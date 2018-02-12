@@ -25,27 +25,38 @@ a:hover{
   width: 100%;
 }
 main, header,footer{
-  padding-top: 15px;
   width: 100%;
   border-bottom: 1px solid #e6e3dc;
 }
 main{
   padding-top: 0;
 }
+header .header_info, header .site_name{
+  height: 36.6px;
+}
+header .header_info{
+  text-align: right;
+  line-height: 36.6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+header .site_name{
+  line-height: 36.6px;
+  font-size: 30px;
+}
 .before-main{
   width: 100%;
   border-bottom: 1px solid #e6e3dc;
 }
 .header_fixed, .main_fixed, .footer_fixed{
-  max-width: 925px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
 
 .site_name{
   color:  #0e4ca1;
-  font-size: 34px;
-  padding: 1.5% 0 0 0;
+  padding: 0 0 0 0;
 }
 
 .site_name a{
@@ -60,7 +71,9 @@ main{
 nav{
   display: block;
   min-width: 660px;
-  margin-left: 38%;
+  padding-left: 316px;
+  box-sizing: border-box;
+  width: 900px;
 }
 
 .list_left nav{
@@ -70,9 +83,18 @@ nav{
   border-bottom: 1px solid #e6e3dc;
 }
 
+nav ul{
+  box-sizing: border-box;
+}
+
 nav ul li{
   display: inline-block;
   margin-right: 2em;
+  box-sizing: border-box;
+}
+
+nav ul li:last-child{
+  margin: 0;
 }
 
 nav ul li a{
@@ -104,11 +126,11 @@ nav ul .active{
 }
 
 .detail{
-  padding: 1% 0;
+  padding: 20px 0;
 }
 
 .detail, .bread, .bm-title{
-  max-width: 925px;
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
@@ -128,7 +150,7 @@ nav ul .active{
 }
 
 .detail_left{
-  max-width: 550px;
+  max-width: 520px;
 }
 
 .detail_right{
