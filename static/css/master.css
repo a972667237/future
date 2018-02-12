@@ -238,7 +238,7 @@ main .main_right{
   width: 100%;
   border-bottom: 1px solid #e6e3dc;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .main_in .main_out{
@@ -257,7 +257,9 @@ main .main_right{
 
 
 footer .copyright{
+  font-family: "Times New Roman";
   text-align: right;
+  padding-bottom: 30px;
 }
 
 .list_left, .list_right{
@@ -320,7 +322,7 @@ main .page_place .pagination li{
 
 .list_right .search{
   width: 100%;
-  padding: 1% 2% 30px 8%;
+  padding: 1% 2% 45px 8%;
   border-bottom: 1px solid #e6e3dc;
   margin-top: -5px;
 }
@@ -512,7 +514,7 @@ main .page_place .pagination li{
 }
 
 .outer_link{
-  padding: 0 5%;
+  padding: 0 20px;
 }
 
 .outer_link .outer_title{
@@ -528,6 +530,10 @@ main .page_place .pagination li{
   font-size: 12px;
 }
 
+.in_p{
+  width: 103%;
+}
+
 .form_bottom{
   padding-top: 1em;
   line-height: 1.3em;
@@ -535,6 +541,7 @@ main .page_place .pagination li{
 
 .friend_link{
   font-size: 14px;
+  padding-bottom: 70px;
 }
 
 .friend_link span{
