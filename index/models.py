@@ -110,10 +110,9 @@ class Join_form(models.Model):
 
 
 class MainPage_article(models.Model):
-    image = models.ImageField(u"图片")
     article = UEditorField(u'内容')
     class Meta:
-        verbose_name = '首页头图管理'
+        verbose_name = '首页文章内容'
         verbose_name_plural = verbose_name
 
 class JoinPage_detail(models.Model):
@@ -136,3 +135,21 @@ class Friend_link(models.Model):
     def __unicode__(self):
         return self.link_name
 
+class Img_all(models.Model):
+    name = models.CharField(u'图片名', max_length=100)
+    img_url = models.ImageField(u'图片')
+    link = models.URLField(u'对应链接')
+    class Meta:
+        verbose_name = '所有图片'
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.name
+
+class Index_img(models.Model):
+    place_name = models.CharField(u'图片位置', max_length=100)
+    img = models.ManyToManyField(Img_all)
+    class Meta:
+        verbose_name = '首页图'
+        verbose_name_plural = verbose_name
+    def __unicode__(self):
+        return self.place_name

@@ -14,3 +14,6 @@ admin.site.register(Fee_Keyword)
 admin.site.register(MainPage_article)
 admin.site.register(JoinPage_detail)
 admin.site.register(Friend_link)
+
+admin.site.register(Img_all)
+admin.site.register(Index_img)

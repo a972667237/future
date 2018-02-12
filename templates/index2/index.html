@@ -4,9 +4,9 @@
           <div class="detail_left">
               <div class="banner">
                   <ul>
-                      <li><img src="/media/{{ head.0.image }}" alt=""></li>
-                      <li><img src="/media/{{ head.0.image }}" alt=""></li>
-
+                      {% for i in head_img.img.all %}
+                      <li><a href="{{ i.link }}"><img src="/media/{{ i.img_url }}" alt=""></a></li>
+                      {% endfor %}
                   </ul>
               </div>
           </div>
@@ -148,26 +148,10 @@
                 <p>
                     期权是交易双方关于未来买卖权利达成的合约。就个股期权来说，期权的买方（权利方）通过网卖方（义务方）支付一定的费用（权利金），获得一种权利，即有权在约定的时间以约定的价格向期权卖方买入或卖出约定数量的特定股票或ETF。个股期权交易合约是指由交易所统一制定的、规定合约买方有权在将来某一时间以特定价格买入或者卖出约定标的证券的标准化合约。买方以
                 </p>
+                {% for i in bottom_img.img.all %}
+                <a href="{{ i.link }}"><img src="/media/{{ i.img_url }}" alt=""></a>
+                {% endfor %}
             </div>
-            <div class="main_in right_in">
-                <div class="in_title">
-                    <span>个股期权</span>
-                </div>
-                <img src="/static/imgs/index_page.jpg" alt="">
-                <p>
-                    期权是交易双方关于未来买卖权利达成的合约。就个股期权来说，期权的买方（权利方）通过网卖方（义务方）支付一定的费用（权利金），获得一种权利，即有权在约定的时间以约定的价格向期权卖方买入或卖出约定数量的特定股票或ETF。个股期权交易合约是指由交易所统一制定的、规定合约买方有权在将来某一时间以特定价格买入或者卖出约定标的证券的标准化合约。买方以
-                </p>
-            </div>
-            <div class="main_in right_in">
-                <div class="in_title">
-                    <span>个股期权</span>
-                </div>
-                <img src="/static/imgs/index_page.jpg" alt="">
-                <p>
-                    期权是交易双方关于未来买卖权利达成的合约。就个股期权来说，期权的买方（权利方）通过网卖方（义务方）支付一定的费用（权利金），获得一种权利，即有权在约定的时间以约定的价格向期权卖方买入或卖出约定数量的特定股票或ETF。个股期权交易合约是指由交易所统一制定的、规定合约买方有权在将来某一时间以特定价格买入或者卖出约定标的证券的标准化合约。买方以
-                </p>
-            </div>
-          </div>
     <script src="/static/js/jquery-1.11.3.min.js"></script>
     <script src="/static/js/jquery.terseBanner.min.js"></script>
     <script>

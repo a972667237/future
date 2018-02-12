@@ -16,6 +16,8 @@ def index(requests):
     fi = Article.objects.filter(isPublic=True, article_type=2).order_by('-pk')[0:5]
     po = Article.objects.filter(isPublic=True, article_type=3).order_by('-pk')[0:5]
     head = MainPage_article.objects.all()
+    head_img = Index_img.objects.get(id=1)
+    bottom_img = Index_img.objects.get(id=2)
     return render(requests, 'index2/index.html', locals())
 
 def about(requests):

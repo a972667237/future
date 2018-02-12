@@ -137,7 +137,7 @@ nav ul .active{
 }
 
 .detail_left img{
-
+  width: 100%;
 }
 
 
@@ -187,11 +187,12 @@ main .main_left, main .main_right{
   overflow: hidden;
 }
 main .main_left{
-  width: 40%;
+  width: 60%;
 }
 main .main_right{
   width: 30%;
-  margin-left: 29%;
+  margin-left: 9%;
+
 }
 
 .main_in{
@@ -352,7 +353,6 @@ main .page_place .pagination li{
 }
 
 .article_card{
-  padding-top: 3%;
   border-bottom: 1px solid #e6e3dc;
 }
 
