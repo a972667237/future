@@ -222,8 +222,8 @@ main .main_left{
   width: 60%;
 }
 main .main_right{
-  width: 30%;
-  margin-left: 9%;
+  width: 31%;
+  margin-left: 8%;
 
 }
 
@@ -245,7 +245,7 @@ main .main_right{
 }
 
 .right_in img{
-  padding: 20px 0.2em;
+  padding: 20px 0;
   width: 100%;
 }
 
