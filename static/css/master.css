@@ -177,10 +177,6 @@ nav ul .active{
 }
 
 
-main {
-  padding-bottom: 30px;
-}
-
 footer{
   padding-top: 40px;
 }
@@ -223,11 +219,11 @@ main .main_left, main .main_right{
   overflow: hidden;
 }
 main .main_left{
-  width: 60%;
+  width: 58%;
 }
 main .main_right{
   width: 31%;
-  margin-left: 8%;
+  margin-left: 10%;
 
 }
 
@@ -563,4 +559,8 @@ main .page_place .pagination li{
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
+}
+
+.main_left .discovers:last-child{
+  margin-bottom: 40px;
 }
