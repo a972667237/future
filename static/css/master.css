@@ -131,6 +131,10 @@ nav ul .active{
   padding: 20px 0;
 }
 
+.detail img{
+  height: 100%;
+}
+
 .detail, .bread, .bm-title{
   max-width: 900px;
   width: 100%;
