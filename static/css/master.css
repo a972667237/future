@@ -149,6 +149,14 @@ nav ul .active{
 }
 
 
+main {
+  padding-bottom: 30px;
+}
+
+footer{
+  padding-top: 40px;
+}
+
 main .main_out{
   position: relative;
   left: 10%;
