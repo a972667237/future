@@ -3,10 +3,18 @@
 {% block beforeMain %}
     <div class="bread">
         <a href="/">主页</a>
-        > <a href="/info">业务信息</a>
+        {% if pageinfo == 4 %}
+        > <a href="/list?type=1">业务信息</a>
+        {% elif pageinfo == 7 %}
+        > <a href="/list?type=2">费率一览</a>
+        {% endif %}
     </div>
     <div class="bm-title">
-        <span>业务信息</span>
+        {% if pageinfo == 4 %}
+            <span>业务信息</span>
+        {% elif pageinfo == 7 %}
+            <span>费率一览</span>
+        {% endif %}
     </div>
 {% endblock %}
 

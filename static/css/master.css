@@ -566,3 +566,8 @@ main .page_place .pagination li{
 .main_left .discovers:last-child{
   margin-bottom: 40px;
 }
+
+.banner{
+  width: 520px;
+  height: 315px;
+}
